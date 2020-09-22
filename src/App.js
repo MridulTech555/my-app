@@ -8,7 +8,7 @@ function App () {
   const childRef2 = useRef(null);
 
   const submitForm = () => {
-    // submittion code goes here
+    alert('Your submit code goes here');
   } 
 
     return (
