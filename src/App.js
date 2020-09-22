@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useRef }  from 'react';
+import CheckAllList from './CheckAllComponent';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function App () {
+  const childRef1 = useRef(null);
+  const childRef2 = useRef(null);
+
+  const submitForm = () => {
+    // submittion code goes here
+  } 
+
+    return (
+      <div className="boxWrapper">
+        <div className="contentWrapper">
+          <div><CheckAllList childRef={childRef1} title='Companies' options = {['Stream Flare', 'Kloudbound', 'Soundpatrol']} /></div>
+          <div><CheckAllList childRef={childRef2} title='Roles' options = {['Data Science', 'Data Engineering', 'Developer']} /></div>
+        </div>
+        <div className="btnWrapper">
+          <button className="btn">Cancel</button>
+          <button className="btn primary-btn" onClick={submitForm}>Apply Filter</button>
+        </div>  
+      </div>
+    );
+
 }
 
 export default App;
